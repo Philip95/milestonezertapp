@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c4eb53d8-2bc9-4a58-aa23-5dfc5512cb46" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_07_21_202020_create_kaufs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_07_21_202020_create_kaufs_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_07_21_202032_create_personen_rolles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_07_21_202032_create_personen_rolles_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_07_21_202041_create_pruefungs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_07_21_202041_create_pruefungs_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_07_21_202058_create_antworts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_07_21_202058_create_antworts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_07_21_202154_create_indikatorens_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_07_21_202154_create_indikatorens_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_07_21_202205_create_elementes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_07_21_202205_create_elementes_table.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -293,16 +287,15 @@
       <updated>1563305496030</updated>
       <workItem from="1563305498848" duration="3524000" />
       <workItem from="1563354366536" duration="1164000" />
-      <workItem from="1563739758264" duration="3649000" />
+      <workItem from="1563739758264" duration="3936000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8337000" />
+    <option name="totallyTimeSpent" value="8624000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="npm" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24130106" />
