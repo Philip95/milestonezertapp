@@ -15,6 +15,13 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+    /**
+     * PS - 21.07.2019
+     * v1.0
+     * Need to be extend the Array for User attributes, otherwise a insert will not be possible
+     * @var array
+     */
     protected $fillable = [
         'name', 'email', 'password',
     ];
