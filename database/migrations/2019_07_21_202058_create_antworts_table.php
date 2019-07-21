@@ -15,8 +15,12 @@ class CreateAntwortsTable extends Migration
     {
         Schema::create('antworts', function (Blueprint $table) {
             $table->bigIncrements('a_id');
-            $table->foreign('user_id')->references('id')->on('users');
+
+            $table->unsignedBigInteger('f_id');
             $table->foreign('f_id')->references('f_id')->on('fragens');
+
+            $table->unsignedBigInteger('u_id');
+            $table->foreign('u_id')->references('id')->on('users');
 
             $table->string('antwort');
             $table->timestamps();

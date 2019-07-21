@@ -15,7 +15,9 @@ class CreateElementesTable extends Migration
     {
         Schema::create('elementes', function (Blueprint $table) {
             $table->bigIncrements('e_id');
-            $table->foreign('b_id')->references('b_id')->on('bereichs');
+
+            $table->unsignedBigInteger('b_id');
+            $table->foreign('b_id')->references('b_id')->on('bereiches');
             $table->string('element_name');
             $table->timestamps();
         });

@@ -15,7 +15,10 @@ class CreatePersonenRollesTable extends Migration
     {
         Schema::create('personen_rolles', function (Blueprint $table) {
             $table->bigIncrements('pr_id');
-            $table->foreign('user_id')->references('id')->on('users');
+
+            $table->unsignedBigInteger('u_id');
+            $table->foreign('u_id')->references('id')->on('users');
+
             $table->boolean('privatperson');
             $table->boolean('geschaeftsperson');
             $table->integer('uid');

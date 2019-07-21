@@ -19,6 +19,7 @@ class CreateIndikatorensTable extends Migration
             $table->string('beschreibung');
             $table->integer('nummer');
             $table->string('link');
+            $table->unsignedBigInteger('e_id');
             $table->foreign('e_id')->references('e_id')->on('elementes');
 
             $table->timestamps();

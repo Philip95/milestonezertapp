@@ -15,7 +15,11 @@ class CreatePruefungsTable extends Migration
     {
         Schema::create('pruefungs', function (Blueprint $table) {
             $table->bigIncrements('p_id');
-            $table->foreign('user_id')->references('id')->on('users');
+
+            $table->unsignedBigInteger('u_id');
+            $table->foreign('u_id')->references('id')->on('users');
+
+            $table->unsignedBigInteger('f_id');
             $table->foreign('f_id')->references('f_id')->on('fragens');
 
             $table->timestamps();

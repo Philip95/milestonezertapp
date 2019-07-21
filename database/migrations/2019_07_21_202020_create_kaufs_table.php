@@ -17,7 +17,8 @@ class CreateKaufsTable extends Migration
             $table->bigIncrements('k_id');
             $table->date('bezahldatum');
             $table->date('kaufdatum');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('u_id');
+            $table->foreign('u_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
