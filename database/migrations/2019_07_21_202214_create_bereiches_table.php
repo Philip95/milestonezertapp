@@ -14,7 +14,8 @@ class CreateBereichesTable extends Migration
     public function up()
     {
         Schema::create('bereiches', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('b_id');
+            $table->string('bereichsname');
             $table->timestamps();
         });
     }

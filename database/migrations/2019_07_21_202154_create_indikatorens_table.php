@@ -14,7 +14,13 @@ class CreateIndikatorensTable extends Migration
     public function up()
     {
         Schema::create('indikatorens', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('i_id');
+            $table->string('indikatorenNr');
+            $table->string('beschreibung');
+            $table->integer('nummer');
+            $table->string('link');
+            $table->foreign('e_id')->references('e_id')->on('elementes');
+
             $table->timestamps();
         });
     }

@@ -14,7 +14,11 @@ class CreateAntwortsTable extends Migration
     public function up()
     {
         Schema::create('antworts', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('a_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('f_id')->references('f_id')->on('fragens');
+
+            $table->string('antwort');
             $table->timestamps();
         });
     }

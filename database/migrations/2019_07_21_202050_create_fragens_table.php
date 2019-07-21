@@ -14,8 +14,9 @@ class CreateFragensTable extends Migration
     public function up()
     {
         Schema::create('fragens', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            $table->bigIncrements('f_id');
+            $table->string('frage');
+            //$table->timestamps();
         });
     }
 
