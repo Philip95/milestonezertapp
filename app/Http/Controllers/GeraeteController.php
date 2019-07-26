@@ -15,7 +15,7 @@ class GeraeteController extends Controller
      */
     public function index()
     {
-        //
+        DB::select('select * from users');
     }
 
     /**
