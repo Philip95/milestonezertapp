@@ -2,12 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use App\Elemente;
 use App\Fragen;
+use App\Indikatoren;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class FragenController extends Controller
 {
+    /**
+     * Get the questions for a specific element of the ICB
+     *
+     * @param Elemente $elementID
+     * @return mixed
+     */
+    public function getByElementID($elementID)
+    {
+        $fragen = DB::table('fragens')->join('indikatorens', function ($join) use ($elementID) {
+                $join->on('fragens.i_id', '=', 'indikatorens.i_id')
+                    ->where('indikatorens.e_id', '=', $elementID);
+            })->get();
+        return $fragen;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -47,7 +65,7 @@ class FragenController extends Controller
      */
     public function show(Fragen $fragen)
     {
-        //
+
     }
 
     /**
