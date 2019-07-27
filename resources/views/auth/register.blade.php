@@ -26,6 +26,20 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="nachname" class="col-md-4 col-form-label text-md-right">{{ __('Nachname') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="nachname" type="text" class="form-control @error('nachname') is-invalid @enderror" name="nachname" value="{{ old('nachname') }}" required autocomplete="name" autofocus>
+
+                                @error('nachname')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
@@ -60,6 +74,33 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+
+                        <!-- BEGIN PS - 24.07.2019 - ZA55 - Insert new Attributes -->
+                        <div class="form-group row">
+                            <label for="privatperson" class="col-md-4 col-form-label text-md-right">{{ __('Privatperson') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="privatperson" type="checkbox" name="privatperson" value="Privatperson" >
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="geschaeftsperson" class="col-md-4 col-form-label text-md-right">{{ __('Geschäftsperson') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="geschaeftsperson" type="checkbox" name="geschaeftsperson" value="geschaeftsperson" >
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="uid" class="col-md-4 col-form-label text-md-right">{{ __('UID') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="uid" type="number" name="uid" value="uid" >
+                            </div>
+                        </div>
+                        <!--END PS - 24.07.2019 - ZA55 - Insert new Attributes -->
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

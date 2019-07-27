@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Support\Facades\DB;
 use App\User;
+use App\PersonenRolle;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -51,7 +53,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:2', 'confirmed'],
         ]);
     }
 
@@ -61,12 +63,31 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
-    {
-        return User::create([
+    protected function create(array $data) {
+
+        $user = User::create([
             'name' => $data['name'],
+            'nachname' => $data['nachname'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        $user->save();
+
+        var_dump($data);
+
+        $userId = $user->id;
+
+        $personenrolle = PersonenRolle::create([
+            'u_id' => $userId,
+            'privatperson' => 0,
+            'geschaeftsperson' => 0,
+            'uid' => $data['uid'],
+            'admin' => 0
+        ]);
+
+        $personenrolle->save();
+
+        return $user;
     }
 }
