@@ -75,6 +75,33 @@
                             </div>
                         </div>
 
+                        <!-- BEGIN PS - 24.07.2019 - ZA55 - Insert new Attributes -->
+                        <div class="form-group row">
+                            <label for="privatperson" class="col-md-4 col-form-label text-md-right">{{ __('Privatperson') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="privatperson" type="checkbox" name="privatperson" value="Privatperson" >
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="geschaeftsperson" class="col-md-4 col-form-label text-md-right">{{ __('Geschäftsperson') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="geschaeftsperson" type="checkbox" name="geschaeftsperson" value="geschaeftsperson" >
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="uid" class="col-md-4 col-form-label text-md-right">{{ __('UID') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="uid" type="number" name="uid" value="uid" >
+                            </div>
+                        </div>
+                        <!--END PS - 24.07.2019 - ZA55 - Insert new Attributes -->
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
