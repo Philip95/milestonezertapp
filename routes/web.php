@@ -22,3 +22,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', ['as'=>'adminlogin', function() {
     return view ('auth.login');
 }]);
+Route::get('/kompetenzelement/{e_id?}', 'FragenController@getByElementID');
