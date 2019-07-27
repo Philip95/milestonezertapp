@@ -24,6 +24,8 @@
                 height: 100vh;
             }
 
+
+
             .flex-center {
                 align-items: center;
                 display: flex;
@@ -70,10 +72,10 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login') }}">Einloggen</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ route('register') }}">Registrieren</a>
                         @endif
                     @endauth
                 </div>
