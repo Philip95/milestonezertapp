@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" ng-controller="FormController as regform">
                         @csrf
 
                         <div class="form-group row">
@@ -80,7 +80,7 @@
                             <label for="privatperson" class="col-md-4 col-form-label text-md-right">{{ __('Privatperson') }}</label>
 
                             <div class="col-md-6">
-                                <input id="privatperson" type="checkbox" name="privatperson" value="Privatperson" >
+                                <input id="privatperson" type="radio" name="privatperson" value="Privatperson" ng-model="rolle" ng-value="false">
                             </div>
                         </div>
 
@@ -89,11 +89,11 @@
                             <label for="geschaeftsperson" class="col-md-4 col-form-label text-md-right">{{ __('Geschäftsperson') }}</label>
 
                             <div class="col-md-6">
-                                <input id="geschaeftsperson" type="checkbox" name="geschaeftsperson" value="geschaeftsperson" >
+                                <input id="geschaeftsperson" type="radio" name="geschaeftsperson" value="geschaeftsperson" ng-model="rolle" ng-value="true">
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row" ng-show="rolle">
                             <label for="uid" class="col-md-4 col-form-label text-md-right">{{ __('UID') }}</label>
 
                             <div class="col-md-6">
