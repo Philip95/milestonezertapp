@@ -78,7 +78,7 @@
 
                         <!-- BEGIN PS - 24.07.2019 - ZA55 - Insert new Attributes -->
                         <div class="form-group row">
-                            <label for="privatperson" class="col-md-4 col-form-label text-md-right">{{ __('Privatperson') }}</label>
+                            <label for="privatperson" class="col-md-4 col-form-label text-md-right">{{ __('Privatperson:') }}</label>
 
                             <div class="col-md-6">
                                 <input id="privatperson" type="radio" name="privatperson" value="Privatperson" ng-model="rolle" ng-value="false">
@@ -87,7 +87,7 @@
 
 
                         <div class="form-group row">
-                            <label for="geschaeftsperson" class="col-md-4 col-form-label text-md-right">{{ __('Geschäftsperson') }}</label>
+                            <label for="geschaeftsperson" class="col-md-4 col-form-label text-md-right">{{ __('Geschäftsperson:') }}</label>
 
                             <div class="col-md-6">
                                 <input id="geschaeftsperson" type="radio" name="geschaeftsperson" value="geschaeftsperson" ng-model="rolle" ng-value="true">
