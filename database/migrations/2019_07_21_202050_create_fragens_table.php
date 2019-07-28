@@ -16,6 +16,8 @@ class CreateFragensTable extends Migration
         Schema::create('fragens', function (Blueprint $table) {
             $table->bigIncrements('f_id');
             $table->string('frage');
+            $table->unsignedBigInteger('i_id');
+            $table->foreign('i_id')->references('i_id')->on('indikatorens');
             //$table->timestamps();
         });
     }

@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Registrieren') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" ng-controller="FormController as regform">
                         @csrf
 
                         <div class="form-group row">
@@ -19,6 +19,21 @@
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+
+                            <label for="nachname" class="col-md-4 col-form-label text-md-right">{{ __('Nachname:') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="nachname" type="text" class="form-control @error('nachname') is-invalid @enderror" name="nachname" value="{{ old('nachname') }}" required autocomplete="name" autofocus>
+
+                                @error('nachname')
+                                <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
@@ -60,6 +75,33 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+
+                        <!-- BEGIN PS - 24.07.2019 - ZA55 - Insert new Attributes -->
+                        <div class="form-group row">
+                            <label for="privatperson" class="col-md-4 col-form-label text-md-right">{{ __('Privatperson') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="privatperson" type="radio" name="privatperson" value="Privatperson" ng-model="rolle" ng-value="false">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="geschaeftsperson" class="col-md-4 col-form-label text-md-right">{{ __('Geschäftsperson') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="geschaeftsperson" type="radio" name="geschaeftsperson" value="geschaeftsperson" ng-model="rolle" ng-value="true">
+                            </div>
+                        </div>
+
+                        <div class="form-group row" ng-show="rolle">
+                            <label for="uid" class="col-md-4 col-form-label text-md-right">{{ __('UID') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="uid" type="number" name="uid" value="uid" >
+                            </div>
+                        </div>
+                        <!--END PS - 24.07.2019 - ZA55 - Insert new Attributes -->
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

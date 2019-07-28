@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" ng-app="milestones">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +8,17 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+
         <link href="{{asset('/css/stylesheet.css')}}" rel="stylesheet" type="text/css">
+
+        <!-- AngularJS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+        <script src="{{ asset('js/angular.js') }}"></script>
+
+        <!-- Scripts -->
+        <script src="{{ asset('js/jquery.js') }}"></script>
+
+
     </head>
     <body>
         <div class="flex-center position-ref full-height">
