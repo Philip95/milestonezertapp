@@ -27,3 +27,6 @@ Route::get('/verlaengerung', function(){
     return view('verlaengerung');
 });
 Route::get('/kompetenzelement/{e_id?}', 'FragenController@getByElementID');
+Route::get('/kompetenzbereich/{b_id?}', 'FragenController@getByBereichID');
+Route::get('/kompetenzindikator/{i_id?}', 'FragenController@getByIndikatorID');
+Route::get('/alleFragen', 'FragenController@getAllFragen');
