@@ -15,7 +15,13 @@
                     @endif
 
                     You are logged in!
+                        @auth
+                            @if (session()->has('verlaengerung'))
+                                Verlängerung notwendig!
+                            @endif
+                        @endauth
                 </div>
+
             </div>
         </div>
     </div>
