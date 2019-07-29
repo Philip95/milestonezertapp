@@ -44,6 +44,10 @@ Route::get('/verlaengerung', function(){
  * @author Eric
  */
 Route::get('/kompetenzelement/{e_id?}', 'FragenController@getByElementID');
+Route::get('/kompetenzbereich/{b_id?}', 'FragenController@getByBereichID');
+Route::get('/kompetenzindikator/{i_id?}', 'FragenController@getByIndikatorID');
+Route::get('/alleFragen', 'FragenController@getAllFragen');
+
 
 /**
  * @author Sarah
@@ -65,4 +69,3 @@ Route::get('/uebungsmodus', 'BereicheController@index')->name('uebung');
  * route for displaying adminbereich in admin blade
  */
 Route::get('/admin', 'PersonenRolleController@index')->name('admin');
-
