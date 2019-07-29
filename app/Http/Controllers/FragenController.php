@@ -56,7 +56,7 @@ class FragenController extends Controller
             ->where('elementes.e_id','=', $elementID)
             ->get();
 
-        return $fragen;
+        return view('fragenNachKompetenzelement')->with(array('fragen'=>$fragen));
     }
 
     /**
