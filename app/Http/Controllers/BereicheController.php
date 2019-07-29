@@ -15,7 +15,7 @@ class BereicheController extends Controller
      */
     public function index()
     {
-        //
+        return view('uebungsmodus');
     }
 
     /**

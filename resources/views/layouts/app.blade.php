@@ -19,7 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    <link href="{{asset('../css/stylesheet.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('/css/stylesheet.css')}}" rel="stylesheet" type="text/css">
 
     <!-- AngularJS v1.7 -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
