@@ -39,7 +39,7 @@
 
                 <div class="content">
                     <div class="title m-b-md">
-                        Laravelo
+                        <img src="{{asset('images/milestone_logo_RGB.jpg')}}" id="milestonelogo">
                     </div>
 
                 <div class="links">

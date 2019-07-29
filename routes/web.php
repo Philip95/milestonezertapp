@@ -28,14 +28,13 @@ Route::get('/home', 'HomeController@index')->name('home');
  * date: 29.07.2019
  * route for displaying login blade, but for the admin
  */
-Route::get('/admin', ['as'=>'adminlogin', function() {
+Route::get('/adminlogin', ['as'=>'adminlogin', function() {
     return view ('auth.login');
 }]);
 
 /**
  * @author Eric
  */
-
 Route::get('/home/verlaengerung/{id?}', 'HomeController@verlaengerung');
 Route::get('/verlaengerung', function(){
     return view('verlaengerung');
@@ -63,3 +62,10 @@ Route::get('/pruefungssimulation', 'PruefungController@index')->name('pruefung')
  * route for displaying uebungsmodus blade
  */
 Route::get('/uebungsmodus', 'BereicheController@index')->name('uebung');
+
+/**
+ * @author Sarah
+ * date: 29.07.2019
+ * route for displaying adminbereich in admin blade
+ */
+Route::get('/admin', 'PersonenRolleController@index')->name('admin');
