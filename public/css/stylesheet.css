@@ -50,5 +50,9 @@ html, body {
 .m-b-md {
     margin-bottom: 30px;
 }
+#milestonelogo {
+    height: 200px;
+    width: 65%;
+}
 
 
