@@ -15,7 +15,7 @@ class PruefungController extends Controller
      */
     public function index()
     {
-        //
+        return view('pruefungssimulation');
     }
 
     /**

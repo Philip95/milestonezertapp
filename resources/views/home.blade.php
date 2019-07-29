@@ -14,12 +14,14 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Sie sind eingeloggt!
+
                         @auth
                             @if (session()->has('verlaengerung'))
                                 Verlängerung notwendig!
                             @endif
                         @endauth
+
                 </div>
 
             </div>
