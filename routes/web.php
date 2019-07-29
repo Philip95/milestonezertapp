@@ -45,6 +45,10 @@ Route::get('/verlaengerung', function(){
  * @author Eric
  */
 Route::get('/kompetenzelement/{e_id?}', 'FragenController@getByElementID');
+Route::get('/kompetenzbereich/{b_id?}', 'FragenController@getByBereichID');
+Route::get('/kompetenzindikator/{i_id?}', 'FragenController@getByIndikatorID');
+Route::get('/alleFragen', 'FragenController@getAllFragen');
+
 
 /**
  * @author Sarah
@@ -59,4 +63,3 @@ Route::get('/pruefungssimulation', 'PruefungController@index')->name('pruefung')
  * route for displaying uebungsmodus blade
  */
 Route::get('/uebungsmodus', 'BereicheController@index')->name('uebung');
-

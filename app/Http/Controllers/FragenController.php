@@ -12,17 +12,66 @@ use Illuminate\Support\Facades\DB;
 class FragenController extends Controller
 {
     /**
-     * Get the questions for a specific element of the ICB
+     * Get all questions from Database
      *
-     * @param Elemente $elementID
      * @return mixed
      */
-    public function getByElementID($elementID)
-    {
-        $fragen = DB::table('fragens')->join('indikatorens', function ($join) use ($elementID) {
-                $join->on('fragens.i_id', '=', 'indikatorens.i_id')
-                    ->where('indikatorens.e_id', '=', $elementID);
-            })->get();
+    public function getAllFragen(){
+        $fragen = DB::table('fragens')
+            ->join('indikatorens', 'fragens.i_id','=','indikatorens.i_id')
+            ->join('elementes','indikatorens.e_id','=','elementes.e_id')
+            ->join('bereiches', 'elementes.b_id','=','bereiches.b_id')
+            ->get();
+        return $fragen;
+    }
+
+    /**
+     * Get the questions for a specific indicator of the ICB
+     *
+     * @param int $indikatorID
+     * @return mixed
+     */
+    public function getByIndikatorID($indikatorID){
+        $fragen = DB::table('fragens')
+            ->join('indikatorens', 'fragens.i_id','=','indikatorens.i_id')
+            ->join('elementes','indikatorens.e_id','=','elementes.e_id')
+            ->join('bereiches', 'elementes.b_id','=','bereiches.b_id')
+            ->where('indikatorens.i_id','=', $indikatorID)
+            ->get();
+
+        return $fragen;
+    }
+
+    /**
+     * Get the questions for a specific element of the ICB
+     *
+     * @param int $elementID
+     * @return mixed
+     */
+    public function getByElementID($elementID){
+        $fragen = DB::table('fragens')
+            ->join('indikatorens', 'fragens.i_id','=','indikatorens.i_id')
+            ->join('elementes','indikatorens.e_id','=','elementes.e_id')
+            ->join('bereiches', 'elementes.b_id','=','bereiches.b_id')
+            ->where('elementes.e_id','=', $elementID)
+            ->get();
+
+        return $fragen;
+    }
+
+    /**
+     * Get the questions for a specific range of the ICB
+     *
+     * @param int $bereichID
+     * @return \Illuminate\Support\Collection
+     */
+    public function getByBereichID($bereichID){
+        $fragen = DB::table('fragens')
+            ->join('indikatorens', 'fragens.i_id','=','indikatorens.i_id')
+            ->join('elementes','indikatorens.e_id','=','elementes.e_id')
+            ->join('bereiches', 'elementes.b_id','=','bereiches.b_id')
+            ->where('bereiches.b_id','=', $bereichID)
+            ->get();
         return $fragen;
     }
 
