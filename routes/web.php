@@ -35,6 +35,15 @@ Route::get('/admin', ['as'=>'adminlogin', function() {
 /**
  * @author Eric
  */
+
+Route::get('/home/verlaengerung/{id?}', 'HomeController@verlaengerung');
+Route::get('/verlaengerung', function(){
+    return view('verlaengerung');
+});
+
+/**
+ * @author Eric
+ */
 Route::get('/kompetenzelement/{e_id?}', 'FragenController@getByElementID');
 
 /**
